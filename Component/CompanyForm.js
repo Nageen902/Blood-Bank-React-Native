@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, ScrollView,TouchableOpacity,Image} from 'react-native';
 import firebase from '@react-native-firebase/app';
 import database from '@react-native-firebase/database';
-import AdminButtonScreen from "../Pages/AdminButton";
+import ComapnyButtonScreen from "../Pages/CompanyButton";
 
-function LoginScreen ({ navigation }) {
+function CompanyFormScreen ({ navigation }) {
 const[email,setEmail] = useState ("");
 const[password,setPassword] = useState ("");
 const save_data = () =>{
@@ -17,7 +17,7 @@ const save_data = () =>{
 
 return (
       <View style={styles.container}>
-         <Image
+        <Image
         style={styles.tinyLogo}
         source={require('../Image/download.jpg')}
       />
@@ -37,14 +37,14 @@ return (
          
         <TouchableOpacity
           style={styles.button}
-          onPress={(save_data) => navigation.navigate('AdminButton')}>
+          onPress={(save_data) => navigation.navigate('CompanyButton')}>
           <Text style={styles.tittle}>Login</Text>
         </TouchableOpacity>       
       </View>
     );
   }
 
-export default LoginScreen;
+export default CompanyFormScreen;
 
 const styles = StyleSheet.create({
   container: {
